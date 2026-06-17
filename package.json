@@ -1,0 +1,35 @@
+{
+  "name": "@divyanshu007/n8n-nodes-ratelimiter",
+  "version": "0.1.0",
+  "description": "Throttle item flow in n8n workflows to prevent API 429 rate limit errors",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "ratelimit",
+    "throttle",
+    "rate-limiter",
+    "429",
+    "automation"
+  ],
+  "license": "MIT",
+  "author": "divyanshu",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && find nodes -name '*.svg' -exec cp {} dist/nodes/RateLimiter/ \\; 2>/dev/null || true",
+    "dev": "tsc --watch"
+  },
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [],
+    "nodes": [
+      "dist/nodes/RateLimiter/RateLimiter.node.js"
+    ]
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "devDependencies": {
+    "n8n-workflow": "^1.0.0",
+    "typescript": "^5.0.0"
+  }
+}
