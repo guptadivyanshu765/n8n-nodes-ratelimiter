@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RateLimiter = void 0;
+const n8n_workflow_1 = require("n8n-workflow");
 class RateLimiter {
     constructor() {
         this.description = {
@@ -71,7 +72,6 @@ class RateLimiter {
         };
     }
     async execute() {
-        const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
         const items = this.getInputData();
         const mode = this.getNodeParameter('mode', 0);
         const batchSize = this.getNodeParameter('batchSize', 0);
@@ -114,7 +114,7 @@ class RateLimiter {
             }
             // Sleep after each batch except the last
             if (i + batchSize < items.length) {
-                await sleep(delayMs);
+                await (0, n8n_workflow_1.sleep)(delayMs);
             }
         }
         return [outputItems];

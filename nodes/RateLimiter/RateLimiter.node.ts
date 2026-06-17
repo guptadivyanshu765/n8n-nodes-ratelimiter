@@ -3,7 +3,7 @@ import {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-	NodeOperationError,
+	sleep,
 } from 'n8n-workflow';
 
 export class RateLimiter implements INodeType {
@@ -75,9 +75,6 @@ export class RateLimiter implements INodeType {
 	};
 
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
-		const sleep = (ms: number): Promise<void> =>
-			new Promise(resolve => setTimeout(resolve, ms));
-
 		const items = this.getInputData();
 		const mode = this.getNodeParameter('mode', 0) as string;
 		const batchSize = this.getNodeParameter('batchSize', 0) as number;
