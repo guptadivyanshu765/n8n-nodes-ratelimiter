@@ -16,7 +16,10 @@
     "type": "git",
     "url": "https://github.com/guptadivyanshu765/n8n-nodes-ratelimiter.git"
   },
-  "author": "divyanshu",
+  "author": {
+    "name": "divyanshu",
+    "email": "guptadivyanshu765@gmail.com"
+  },
   "main": "index.js",
   "scripts": {
     "build": "tsc && find nodes -name '*.svg' -exec cp {} dist/nodes/RateLimiter/ \\; 2>/dev/null || true",
