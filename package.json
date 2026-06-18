@@ -1,6 +1,6 @@
 {
   "name": "@divyanshu007/n8n-nodes-ratelimiter",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Throttle item flow in n8n workflows to prevent API 429 rate limit errors",
   "keywords": [
     "n8n-community-node-package",
@@ -12,6 +12,8 @@
     "automation"
   ],
   "license": "MIT",
+  "homepage": "https://github.com/guptadivyanshu765/n8n-nodes-ratelimiter#readme",
+  "files": ["dist"],
   "repository": {
     "type": "git",
     "url": "https://github.com/guptadivyanshu765/n8n-nodes-ratelimiter.git"
